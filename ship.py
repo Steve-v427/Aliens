@@ -3,8 +3,7 @@ import pygame
 from pygame.sprite import Sprite
 
 class Ship(Sprite):
-    """A class to manage the ship."""
- 
+
     def __init__(self, ai_game):
         """Initialize the ship and set its starting position."""
         super().__init__()
@@ -12,7 +11,7 @@ class Ship(Sprite):
         self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
 
-        # Load the ship image and get its rect.
+        # Load the ship image.
         self.image = pygame.image.load('Alieninvadors/images/tank.png')
         self.rect = self.image.get_rect()
 
@@ -38,7 +37,7 @@ class Ship(Sprite):
         self.rect.x = self.x
 
     def blitme(self):
-        """Draw the ship at its current location."""
+        """Display the ship at its current location."""
         self.screen.blit(self.image, self.rect)
 
     def center_ship(self):

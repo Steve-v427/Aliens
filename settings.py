@@ -2,12 +2,10 @@ class Settings:
     """A class to store all settings for Alien Invasion."""
 
     def __init__(self):
-        """Initialize the game's settings."""
         # Screen settings
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_color = (0, 0, 0)
-        #self.background = pygame.image.load('Alieninvadors/images/background.jpg')
         self.ship_limit = 3
         # Maximum amount of lives is 3!
         if self.ship_limit > 3:
@@ -18,6 +16,8 @@ class Settings:
         self.bullet_width = 8
         self.bullet_height = 17
         self.bullet_color = (255, 255, 255)
+        if self.bullet_color != (255, 255, 255):
+            raise Exception("Wrong Bullet color used!")
         self.bullets_allowed = 10
         if self.bullets_allowed >= 11:
             raise Exception("Maximum amount of Bullets reached!")

@@ -4,17 +4,17 @@ from pygame.sprite import Group
 from ship import Ship
 
 class Scoreboard:
-    """A class to report scoring information."""
+    """A class to display the score of the game."""
 
     def __init__(self, ai_game):
-        """Initialize scorekeeping attributes."""
+        """Start the scoring."""
         self.ai_game = ai_game
         self.screen = ai_game.screen
         self.screen_rect = self.screen.get_rect()
         self.settings = ai_game.settings
         self.stats = ai_game.stats
         
-        # Font settings for scoring information.
+        # Font settings.
         self.text_color = (255, 255, 255)
         self.font = pygame.font.SysFont(None, 56)
 
@@ -43,7 +43,7 @@ class Scoreboard:
         self.high_score_image = self.font.render(high_score_str, True,
                 self.text_color, self.settings.bg_color)
             
-        # Center the high score at the top of the screen.
+        # Center the high score at the top center of the screen.
         self.high_score_rect = self.high_score_image.get_rect()
         self.high_score_rect.centerx = self.screen_rect.centerx
         self.high_score_rect.top = self.score_rect.top

@@ -4,16 +4,16 @@ from alien_invasion import AlienInvasion
 from settings import Settings
 from scoreboard import Scoreboard
 
-class TestSettings(unittest.TestCase):
+class TestSpeedUPSettings(unittest.TestCase):
     def setUp(self):
         self.maxspeedup_scale = Settings()
 
     def test_speedup_scale(self):
-        self.assertNotEqual(self.maxspeedup_scale.speedup_scale, 2)
+        self.assertNotEqual(self.maxspeedup_scale.speedup_scale, 1.8)
         if True:
             print("Test 1 Sucess!")
 
-class TestSetting(unittest.TestCase):
+class TestShipSetting(unittest.TestCase):
     def setUp(self):
         self.starting_ship_speed = Settings()
 
